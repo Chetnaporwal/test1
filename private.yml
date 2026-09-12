@@ -1,0 +1,27 @@
+name: Private Linux Runner Automation
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  automation:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Show Runner Information
+        run: |
+          echo "Private Linux Runner is working!"
+          echo "Hello Shreya!"
+          echo "Automation executed successfully."
+          uname -a
+
+      - name: Show Date
+        run: |
+          date
